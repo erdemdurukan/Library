@@ -19,6 +19,7 @@ public class BookController {
 
     @GetMapping("/getAllBooks")
     public List<Book> GetAllBooks(){
+
         return bookService.getAllBooks();
     }
     @PostMapping("/createBook")
@@ -27,14 +28,12 @@ public class BookController {
 
     }
 
-    @DeleteMapping("/deleteBook")
-    public Book deleteBookByName(@RequestBody String  bookName){
-        //Optional<Book> a = bookRepository.findByName(bookName);
-
-       return null;
-        // bookRepository.delete(a);
-
+    @DeleteMapping("/deleteBook/{bookId}")
+    public void deleteBookById(@PathVariable("bookId") String uuid ){
+        bookService.deleteBook(uuid);
 
     }
+
+
 
 }

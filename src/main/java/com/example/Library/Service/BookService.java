@@ -22,4 +22,8 @@ public class BookService {
     public Book createBook(Book book) {
         return bookRepository.save(book);
     }
+
+    public void deleteBook(String uuid) {
+        bookRepository.deleteById(uuid);
+    }
 }
