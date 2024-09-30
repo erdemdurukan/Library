@@ -3,7 +3,10 @@ package com.example.Library.Model;
 import jakarta.persistence.*;
 import lombok.*;
 
+
 @Getter
+@Setter
+@Builder
 @Entity
 public class Book {
 
