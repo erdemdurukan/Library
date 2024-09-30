@@ -1,12 +1,16 @@
 package com.example.Library.Model;
 
 import jakarta.annotation.Nullable;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+import lombok.*;
 
 import java.util.List;
 
+@Getter
+@Setter
+@Entity
+@AllArgsConstructor
+@Builder
 public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
@@ -14,7 +18,7 @@ public class Customer {
     //@Column(unique = true)
     private String name;
     private String surname;
-    @Nullable
+    @ManyToMany
     private List<Book> borrowedBooks;
 
 
