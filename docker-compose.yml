@@ -1,0 +1,20 @@
+
+services:
+  app:
+    build:
+      context: .
+    depends_on:
+      - db
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://db:3306/library
+
+  db:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: library
+      MYSQL_PASSWORD: password
+    ports:
+      - "3307:3306"

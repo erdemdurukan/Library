@@ -1,6 +1,5 @@
 package com.example.Library.Model;
 
-import jakarta.annotation.Nullable;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -18,8 +17,8 @@ public class Customer {
     //@Column(unique = true)
     private String name;
     private String surname;
-    @ManyToMany
-    private List<Book> borrowedBooks;
+    //@ManyToMany
+    //private List<Book> borrowedBooks;
 
 
 }
